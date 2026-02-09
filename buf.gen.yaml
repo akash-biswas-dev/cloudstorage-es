@@ -1,0 +1,22 @@
+version: v2
+clean: true
+
+managed:
+  # If set enabled false then the configurations undermanage mode wont apply.
+  enabled: true
+  override:
+
+plugins:
+  # Plugin to generate protocol buffers and service also for both js and ts.
+  - remote: buf.build/bufbuild/es:v2.11.0
+    out: gen
+inputs:
+  # Here we provide the proto files directly from github no need to clone at runtime.
+
+  - git_repo: https://github.com/akash-biswas-dev/cloudstorage-proto.git
+    branch: main
+    # Directory where all proto files are located.
+    subdir: proto
+    # Depth define how many commits need to copy. no need to copy all the previous commits.
+    depth: 30
+
