@@ -1,5 +1,5 @@
 {
-  "name": "cloudstorage-ts/js",
+  "name": "cloudstorage-es",
   "version": "1.0.0",
   "description": "",
   "license": "ISC",
@@ -8,6 +8,8 @@
   "main": "index.js",
   "scripts": {},
   "dependencies": {
-    "@bufbuild/protobuf": "^2.11.0"
+    "@bufbuild/protobuf": "^2.11.0",
+    "@connectrpc/connect": "^2.1.1",
+    "@connectrpc/connect-web": "^2.1.1"
   }
 }
