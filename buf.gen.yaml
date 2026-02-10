@@ -7,7 +7,7 @@ managed:
 plugins:
   # Plugin to generate protocol buffers and service also for both js and ts.
   - remote: buf.build/bufbuild/es:v2.11.0
-    out: gen
+    out: src/gen
 inputs:
   # Here we provide the proto files directly from github no need to clone at runtime.
 
