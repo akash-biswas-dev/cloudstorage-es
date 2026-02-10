@@ -53,8 +53,8 @@ var CloudStorage = class {
     this.fileServiceClient = (0, import_connect.createClient)(FileService, transport);
     this.cloudStorageClient = (0, import_connect.createClient)(CloudStorageService, transport);
   }
-  async saveFile(readable) {
-    const reader = readable.getReader();
+  async saveFile(readBytes) {
+    const reader = readBytes.getReader();
     async function* generator(reader2) {
       const { done, value } = await reader2.read();
       if (done) return;
@@ -64,7 +64,7 @@ var CloudStorage = class {
     }
     while (true) {
       const req = generator(reader);
-      if (req === null) break;
+      if (!req) break;
       console.log(req);
     }
   }
